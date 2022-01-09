@@ -11,30 +11,32 @@
 /*
   step 1: Let arr is the array which need to be sort
   step 2: Set i = 0;
-  step 3: if i >= arr.length, Goto step 10
-  step 4: Set j = j + 1;
-  step 5: if j >= arr.length, Goto step 9
-  step 6: if arr[i] > arr[j] , swap values at position i and j
-  step 7: Set j= j + 1
+  step 3: if i >= arr.length, Goto step 11
+  step 4: Set lowestValueIndex = i
+  step 5: Set j = j + 1;
+  step 6: if j >= arr.length, Goto step 9
+  step 7: if arr[i] > arr[j] , lowestValueIndex =j
+  step 8: Set j= j + 1
   step 8: Goto step 6
-  step 9: Set i = i + 1, Goto step 3
-  step 10: retrun arr
-  step 11: Exit 
+  step 9: if i !== lowestValueIndex then swap values at position i and lowestValueIndex
+  step 10: Set i = i + 1, Goto step 3
+  step 11: retrun arr
+  step 12: Exit 
 */
 
 function selectionSort(arr) {
   for (let i = 0; i < arr?.length; ++i) {
-    let minIndex = i;
+    let lowestValueIndex = i;
     for (let j = i + 1; j < arr?.length; ++j) {
-      if (arr[minIndex] > arr[j]) {
-        minIndex = j;
+      if (arr[lowestValueIndex] > arr[j]) {
+        lowestValueIndex = j;
       }
     }
 
-    if (minIndex !== i) {
-      arr[i] = arr[i] + arr[minIndex];
-      arr[minIndex] = arr[i] - arr[minIndex];
-      arr[i] = arr[i] - arr[minIndex];
+    if (lowestValueIndex !== i) {
+      arr[i] = arr[i] + arr[lowestValueIndex];
+      arr[lowestValueIndex] = arr[i] - arr[lowestValueIndex];
+      arr[i] = arr[i] - arr[lowestValueIndex];
     }
   }
 
