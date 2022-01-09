@@ -1,3 +1,5 @@
+// only work on sorted array
+
 /*
    Space Complexity: O(1)
 
