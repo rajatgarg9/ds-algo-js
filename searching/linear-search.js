@@ -35,6 +35,6 @@ function linearSearch(arr, x) {
 
 // examples
 
-binarySearch([2,3,4,5,6,7],4); // Output: 2
+console.log(linearSearch([2, 3, 4, 5, 6, 7], 4)); // Output: 2
 
-binarySearch([2,3,4,5,6,7],20); // Output: -1
+console.log(linearSearch([2, 3, 4, 5, 6, 7], 20)); // Output: -1
