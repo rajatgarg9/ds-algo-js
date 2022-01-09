@@ -4,9 +4,9 @@
    Space Complexity: O(1)
 
    Time Complexity
-     - Best Case : O(1)
-     - Average Case : O(n)
-     - Worst Case : O(n2)
+     - Best Case : Ω(1)
+     - Average Case : Θ(n)
+     - Worst Case : O(n)
 */
 
 // Algorithm
@@ -35,16 +35,6 @@ function linearSearch(arr, x) {
 
 // examples
 
-/*
-Input : arr = [2,3,4,5,6,7]
-        x = 4
+binarySearch([2,3,4,5,6,7],4); // Output: 2
 
-Output: 2
-*/
-
-/*
-Input : arr = [2,3,4,5,6,7]
-        x = 20
-
-Output: -1
-*/
+binarySearch([2,3,4,5,6,7],20); // Output: -1
