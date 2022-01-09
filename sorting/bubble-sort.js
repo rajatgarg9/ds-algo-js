@@ -27,7 +27,7 @@
 
 // implementation
 function bubbleSort(arr) {
-  for (let i = 0; i < arr?.length - 1; ++i) {
+  for (let i = 0; i < arr?.length; ++i) {
     let isSwappingDone = false;
 
     for (let j = 0; j < arr?.length - i - 1; ++j) {
