@@ -2,7 +2,7 @@
    Space Complexity: O(n)
 
    Time Complexity
-     - Best Case : Ω(n)
+     - Best Case : Ω(n * Log n)
      - Average Case : Θ(n * Log n)
      - Worst Case : O(n * Log n)
 */
@@ -16,15 +16,15 @@
 */
 
 // implementation
-function mergeSort(arr, startIndex = 0, endIndex = arr?.length - 1) {
+function mergeSortOutofPlace(arr, startIndex = 0, endIndex = arr?.length - 1) {
   const middleIndex = startIndex + Math.floor((endIndex - startIndex) / 2);
 
   if (endIndex <= startIndex) {
     return arr;
   }
 
-  mergeSort(arr, startIndex, middleIndex);
-  mergeSort(arr, middleIndex + 1, endIndex);
+  mergeSortOutofPlace(arr, startIndex, middleIndex);
+  mergeSortOutofPlace(arr, middleIndex + 1, endIndex);
 
   return merge(arr, startIndex, middleIndex, endIndex);
 }
@@ -71,5 +71,5 @@ function merge(arr, startIndex, middleIndex, endIndex) {
 
 // examples
 
-console.log(mergeSort([5, 1, 23, 4, 1, 233, 1, 3, 5])); // Output: [1, 1,1, 3, 4,5, 5, 23,233]
-console.log(mergeSort([5, 4, 3, 2, 1])); // Output: [1,2,3,4,5]
+console.log(mergeSortOutofPlace([5, 1, 23, 4, 1, 233, 1, 3, 5])); // Output: [1, 1,1, 3, 4,5, 5, 23,233]
+console.log(mergeSortOutofPlace([5, 4, 3, 2, 1])); // Output: [1,2,3,4,5]
