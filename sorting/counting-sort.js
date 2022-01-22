@@ -57,4 +57,4 @@ function countingSort(arr) {
 // examples
 
 console.log(countingSort([5, 1, 23, 4, 1, 233, 1, 3, 5])); // Output: [1, 1,1, 3, 4,5, 5, 23,233]
-console.log(countingSort([5, 4, 3, 2, 1, 0])); // Output: [1,2,3,4,5]
+console.log(countingSort([5, 4, 3, 2, 1])); // Output: [1,2,3,4,5]
