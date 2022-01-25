@@ -49,13 +49,13 @@ function partition(arr, startIndex = 0, endIndex = arr?.length - 1) {
     }
   }
 
-  swap(arr, startIndex, endPointer);
+  swap(arr, pivotIndex, endPointer);
 
   return endPointer;
 }
 
 function swap(arr, firstIndex, secondIndex) {
-  if (firstIndex === secondIndex) {
+  if (firstIndex === secondIndex || firstIndex < 0 || secondIndex < 0) {
     return arr;
   }
   arr[firstIndex] = arr[firstIndex] + arr[secondIndex];
