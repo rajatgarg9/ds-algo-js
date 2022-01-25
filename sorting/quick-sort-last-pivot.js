@@ -40,7 +40,7 @@ function partition(arr, startIndex = 0, endIndex = arr?.length - 1) {
     ) {
       ++startPointer;
     }
-    while (arr[pivotIndex] < arr[endPointer]) {
+    while (arr[pivotIndex] < arr[endPointer] || endPointer === pivotIndex) {
       --endPointer;
     }
     if (endPointer > startPointer) {
