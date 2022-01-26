@@ -1,3 +1,14 @@
+const insertionSort = require("./insertion-sort");
+
+/*
+   Space Complexity: O(n)
+
+   Time Complexity
+     - Best Case :
+     - Average Case :
+     - Worst Case : O(n^2)
+*/
+
 function bucketSort(arr) {
   const bucket = new Array(10);
 
@@ -12,7 +23,7 @@ function bucketSort(arr) {
 
   for (let i = 0; i < bucket.length; ++i) {
     if (bucket[i].length > 1) {
-      bucket[i] = bucketSort(bucket[i]);
+      bucket[i] = insertionSort(bucket[i]);
     }
   }
 
@@ -31,4 +42,4 @@ function bucketSort(arr) {
   return arr;
 }
 
-console.log(bucketSort([0.4, 0.2, 0.5]));
+console.log(bucketSort([0.49, 0.44, 0.5, 0.36]));
