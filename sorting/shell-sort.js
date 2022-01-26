@@ -3,8 +3,8 @@
 
    Time Complexity
      - Best Case : Ω(n * Log n)
-     - Average Case : Θ(n^2)
-     - Worst Case : O(n^2)
+     - Average Case : 
+     - Worst Case : 
 */
 
 // Algorithm
