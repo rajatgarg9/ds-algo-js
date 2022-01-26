@@ -19,7 +19,7 @@
 function shellSort(arr) {
   let gap = Math.floor((arr.length - 1) / 2);
 
-  while (gap > 1) {
+  while (gap >= 1) {
     for (let i = 0; i < arr.length - gap; ++i) {
       for (let j = i; j >= 0; j = j - gap) {
         if (arr[j] > arr[j + gap]) {
