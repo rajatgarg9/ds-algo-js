@@ -58,7 +58,7 @@ function countingSort(arr) {
 
   const resultArray = [];
 
-  for (let i = 0; i < arr?.length; ++i) {
+  for (let i = arr?.length - 1; i >= 0; --i) {
     const selectedNumber = normaliseValue(arr[i], minNumber, maxDecimalLength);
     const selectedNumberIndex = countArray[selectedNumber] - 1;
     resultArray[selectedNumberIndex] = arr[i];
