@@ -53,11 +53,13 @@ class Queue {
   }
 }
 
-const queue = new Queue();
+module.exports = Queue;
 
-queue.enqueue(1);
-queue.enqueue(2);
-queue.enqueue(3);
-queue.dequeue();
+// const queue = new Queue();
 
-consol.log(queue);
+// queue.enqueue(1);
+// queue.enqueue(2);
+// queue.enqueue(3);
+// queue.dequeue();
+
+// consol.log(queue);
