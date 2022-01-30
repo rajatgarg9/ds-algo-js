@@ -119,7 +119,7 @@ class SingleLinkedList {
       return 0;
     } else {
       let previousNode = this.head;
-      let previousNodeIndex = 0;
+
       for (let i = 1; i < this.size; ++i) {
         if (previousNode.next.element === element) {
           previousNode.next = previousNode.next.next;
@@ -127,7 +127,6 @@ class SingleLinkedList {
           return i;
         }
         previousNode = previousNode.next;
-        previousNodeIndex = i;
       }
     }
 

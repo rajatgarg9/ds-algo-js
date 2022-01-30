@@ -104,11 +104,19 @@ class DoubleLinkedList {
         selectedNode = this.head;
         this.head = this.head.next;
         this.head.prev = null;
+
+        if (this.size === 2) {
+          this.tail = this.head;
+        }
       }
     } else if (index === this.size - 1) {
       selectedNode = this.tail;
       this.tail = this.tail.prev;
       this.tail.next = null;
+
+      if (this.size === 2) {
+        this.head = this.tail;
+      }
     } else {
       let currentNode = this.head;
       for (let i = 1; i <= index; ++i) {
