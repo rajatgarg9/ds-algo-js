@@ -8,11 +8,20 @@ class Node {
   }
 }
 
+/*
+   Space Complexity: O(n)
+*/
 class BinarySearchTree {
   constructor() {
     this.root = null;
   }
 
+  /*
+   Time Complexity
+     - Best Case : Ω(Log n)
+     - Average Case : Θ(Log n)
+     - Worst Case : O(n)
+*/
   insert(element) {
     const newNode = new Node(element);
     if (!this.root) {
@@ -46,6 +55,12 @@ class BinarySearchTree {
     }
   }
 
+  /*
+   Time Complexity
+     - Best Case : Ω(1)
+     - Average Case : Θ(Log n)
+     - Worst Case : O(n)
+*/
   search(element) {
     let selectedNode = this.root;
 
@@ -69,6 +84,12 @@ class BinarySearchTree {
     return undefined;
   }
 
+  /*
+   Time Complexity
+     - Best Case : Ω(Log n)
+     - Average Case : Θ(Log n)
+     - Worst Case : O(n)
+*/
   findMaxValue(tree = this.root) {
     if (!tree) {
       return undefined;
@@ -87,6 +108,12 @@ class BinarySearchTree {
     return maxValue;
   }
 
+  /*
+   Time Complexity
+     - Best Case : Ω(Log n)
+     - Average Case : Θ(Log n)
+     - Worst Case : O(n)
+*/
   findMinValue(tree = this.root) {
     if (!tree) {
       return undefined;
@@ -105,6 +132,12 @@ class BinarySearchTree {
     return minValue;
   }
 
+  /*
+   Time Complexity
+     - Best Case : Ω(Log n)
+     - Average Case : Θ(Log n)
+     - Worst Case : O(n)
+*/
   delete(element) {
     let selectedNode = this.root;
     let deletedNode;
@@ -145,6 +178,14 @@ class BinarySearchTree {
     }
   }
 
+  /*
+   Space Complexity: O(n)
+
+   Time Complexity
+     - Best Case : Ω(1)
+     - Average Case : Θ(n)
+     - Worst Case : O(n)
+*/
   BFS() {
     const queue = new Queue();
     const data = [];
@@ -165,6 +206,14 @@ class BinarySearchTree {
     return data;
   }
 
+  /*
+   Space Complexity: O(h)
+
+   Time Complexity
+     - Best Case : Ω(n)
+     - Average Case : Θ(n)
+     - Worst Case : O(n)
+*/
   DFSPreOrder(tree = this.root) {
     const data = [];
 
@@ -177,6 +226,14 @@ class BinarySearchTree {
     return data;
   }
 
+  /*
+   Space Complexity: O(h)
+
+   Time Complexity
+     - Best Case : Ω(n)
+     - Average Case : Θ(n)
+     - Worst Case : O(n)
+*/
   DFSInOrder(tree = this.root) {
     const data = [];
 
@@ -189,6 +246,14 @@ class BinarySearchTree {
     return data;
   }
 
+  /*
+   Space Complexity: O(h)
+
+   Time Complexity
+     - Best Case : Ω(n)
+     - Average Case : Θ(n)
+     - Worst Case : O(n)
+*/
   DFSPostOrder(tree = this.root) {
     const data = [];
 
