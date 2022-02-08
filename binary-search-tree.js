@@ -109,27 +109,11 @@ class BinarySearchTree {
     let selectedNode = this.root;
     let deletedNode;
 
-    if (selectedNode.element === element) {
-      deletedNode = JSON.parse(JSON.stringify(selectedNode));
-
-      if (!selectedNode.left && !selectedNode.right) {
-        this.root = null;
-      } else if (selectedNode.left) {
-        const maxValue = this.findMaxValue(selectedNode.left);
-        this.delete(maxValue);
-        selectedNode.element = maxValue;
-      } else {
-        const minValue = this.findMinValue(selectedNode.right);
-        this.delete(minValue);
-        selectedNode.element = minValue;
-      }
-
-      return deletedNode;
-    }
-
     while (selectedNode) {
       let nextNode;
-      if (selectedNode.element > element) {
+      if (selectedNode.element === element) {
+        nextNode = selectedNode;
+      } else if (selectedNode.element > element) {
         nextNode = selectedNode.left;
       } else {
         nextNode = selectedNode.right;
@@ -138,7 +122,9 @@ class BinarySearchTree {
       if (nextNode.element === element) {
         deletedNode = JSON.parse(JSON.stringify(nextNode));
         if (!nextNode.left && !nextNode.right) {
-          if (selectedNode.element > element) {
+          if (selectedNode.element === element) {
+            this.root = null;
+          } else if (selectedNode.element > element) {
             selectedNode.left = null;
           } else {
             selectedNode.right = null;
@@ -232,4 +218,4 @@ console.log(bstObject.DFSInOrder());
 console.log(bstObject.DFSPostOrder());
 console.log(bstObject.findMaxValue());
 console.log(bstObject.findMinValue());
-console.log(bstObject.delete(60));
+console.log(bstObject.delete(70));
