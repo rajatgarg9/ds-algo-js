@@ -69,7 +69,7 @@ class MaxHeap {
 
     let selectedParentIndex = index;
 
-    while (selectedParentIndex < this.items.length) {
+    while (selectedParentIndex < this.items.length - 1) {
       const leftChildIndex = 2 * selectedParentIndex + 1;
       const rightChildIndex = 2 * selectedParentIndex + 2;
       const selectedChildIndex =
