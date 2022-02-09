@@ -13,7 +13,7 @@ class MaxHeap {
     this.items.push(element);
     let slectedIndex = this.items.length - 1;
 
-    while (slectedIndex >= 0) {
+    while (slectedIndex > 0) {
       let previousIndex = Math.floor((slectedIndex - 1) / 2);
 
       if (this.items[slectedIndex] > this.items[previousIndex]) {
