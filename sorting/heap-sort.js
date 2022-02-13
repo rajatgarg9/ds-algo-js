@@ -1,7 +1,7 @@
 const maxHeapify = require("../binary-heap/max-heapify");
 
 /*
-   Space Complexity: O(Log n)
+   Space Complexity: O(1)
 
    Time Complexity
      - Best Case : Ω(n)
@@ -9,10 +9,41 @@ const maxHeapify = require("../binary-heap/max-heapify");
      - Worst Case : O(n * Log n)
 */
 function heapSort(arr = []) {
+  maxHeapify(arr);
   for (let i = arr.length - 1; i > 0; --i) {
-    maxHeapify(arr, i);
-
     [arr[0], arr[i]] = [arr[i], arr[0]];
+    const newlastIndex = i - 1;
+    let selectedParentIndex = 0;
+
+    while (selectedParentIndex <= newlastIndex) {
+      const leftChildIndex = 2 * selectedParentIndex + 1;
+      const rightChildIndex = 2 * selectedParentIndex + 2;
+      let selectedChildIndex;
+
+      if (leftChildIndex <= newlastIndex && rightChildIndex <= newlastIndex) {
+        selectedChildIndex =
+          arr[rightChildIndex] > arr[leftChildIndex]
+            ? rightChildIndex
+            : leftChildIndex;
+      } else if (leftChildIndex <= newlastIndex) {
+        selectedChildIndex = leftChildIndex;
+      } else if (rightChildIndex <= newlastIndex) {
+        selectedChildIndex = rightChildIndex;
+      } else {
+        break;
+      }
+
+      if (arr[selectedChildIndex] > arr[selectedParentIndex]) {
+        [arr[selectedChildIndex], arr[selectedParentIndex]] = [
+          arr[selectedParentIndex],
+          arr[selectedChildIndex],
+        ];
+
+        selectedParentIndex = selectedChildIndex;
+      } else {
+        break;
+      }
+    }
   }
 
   return arr;
