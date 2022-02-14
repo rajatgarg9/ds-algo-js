@@ -1,6 +1,6 @@
 class HashTable {
   constructor(arraySize = 53) {
-    this.items = new Array(arraySize).fill();
+    this.items = new Array(arraySize);
     this.size = 0;
   }
 
