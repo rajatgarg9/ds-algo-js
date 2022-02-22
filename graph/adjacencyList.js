@@ -123,6 +123,33 @@ class Graph {
     return output;
   }
 
+  /*
+  Space Complexity: O(|V|)
+
+   Time Complexity
+     - Best Case : Ω(|E| + |V|)
+     - Average Case : Θ(|E| + |V|)
+     - Worst Case : O(|E| + |V|)
+*/
+  dfs(source, visitedVertex = {}, output = []) {
+    if (!visitedVertex[source]) {
+      let selectedNode = this.adj[source]?.head;
+      output.push(source);
+
+      visitedVertex[source] = true;
+
+      while (selectedNode) {
+        if (!visitedVertex[selectedNode.element]) {
+          output.push(...this.dfs(selectedNode.element, visitedVertex));
+        }
+
+        selectedNode = selectedNode.next;
+      }
+    }
+
+    return output;
+  }
+
   printGraph() {
     let output = "";
     for (const element of Object.keys(this.adj)) {
@@ -150,3 +177,4 @@ graph.addEdge("e", "c");
 graph.printGraph();
 
 console.log(graph.bfs("a"));
+console.log(graph.dfs("a"));
