@@ -200,14 +200,16 @@ class SingleLinkedList {
   }
 }
 
-const singleLinkedListObj = new SingleLinkedList();
-console.log(singleLinkedListObj);
+module.exports = SingleLinkedList;
 
-singleLinkedListObj.add(2);
-singleLinkedListObj.add(3);
-singleLinkedListObj.insertAt(4, 2);
-singleLinkedListObj.insertAt(4, 2);
-singleLinkedListObj.removeFrom(2);
-singleLinkedListObj.indexOf(3);
+// const singleLinkedListObj = new SingleLinkedList();
+// console.log(singleLinkedListObj);
 
-console.log(singleLinkedListObj.printList());
+// singleLinkedListObj.add(2);
+// singleLinkedListObj.add(3);
+// singleLinkedListObj.insertAt(4, 2);
+// singleLinkedListObj.insertAt(4, 2);
+// singleLinkedListObj.removeFrom(2);
+// singleLinkedListObj.indexOf(3);
+
+// console.log(singleLinkedListObj.printList());
